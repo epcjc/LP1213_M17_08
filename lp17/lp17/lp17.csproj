@@ -49,9 +49,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,21 +70,76 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Database1DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Database1DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="equipamentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="equipamentos.Designer.cs">
+      <DependentUpon>equipamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inserir_equi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inserir_equi.Designer.cs">
+      <DependentUpon>inserir_equi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inserir_placa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inserir_placa.Designer.cs">
+      <DependentUpon>inserir_placa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Le_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Le_1.Designer.cs">
+      <DependentUpon>Le_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="listar_equi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listar_equi.Designer.cs">
+      <DependentUpon>listar_equi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="listar_placa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listar_placa.Designer.cs">
+      <DependentUpon>listar_placa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu.Designer.cs">
+      <DependentUpon>menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="placas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="placas.Designer.cs">
+      <DependentUpon>placas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="equipamentos.resx">
+      <DependentUpon>equipamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inserir_equi.resx">
+      <DependentUpon>inserir_equi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inserir_placa.resx">
+      <DependentUpon>inserir_placa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Le_1.resx">
+      <DependentUpon>Le_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listar_equi.resx">
+      <DependentUpon>listar_equi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu.resx">
+      <DependentUpon>menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="placas.resx">
+      <DependentUpon>placas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,6 +150,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
     <None Include="app.config" />
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
@@ -103,17 +162,6 @@
     </None>
     <None Include="Database1DataSet.xss">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet1.xsc">
-      <DependentUpon>Database1DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Database1DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Database1DataSet1.xss">
-      <DependentUpon>Database1DataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
