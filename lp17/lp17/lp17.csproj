@@ -65,6 +65,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database1DataSet.cs">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Database1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,11 +104,11 @@
     <Compile Include="listar_placa.Designer.cs">
       <DependentUpon>listar_placa.cs</DependentUpon>
     </Compile>
-    <Compile Include="listar_tt_memoria.cs">
+    <Compile Include="listar_RAM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="listar_tt_memoria.Designer.cs">
-      <DependentUpon>listar_tt_memoria.cs</DependentUpon>
+    <Compile Include="listar_RAM.Designer.cs">
+      <DependentUpon>listar_RAM.cs</DependentUpon>
     </Compile>
     <Compile Include="menu.cs">
       <SubType>Form</SubType>
@@ -144,8 +148,8 @@
     <EmbeddedResource Include="listar_equi.resx">
       <DependentUpon>listar_equi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="listar_tt_memoria.resx">
-      <DependentUpon>listar_tt_memoria.cs</DependentUpon>
+    <EmbeddedResource Include="listar_RAM.resx">
+      <DependentUpon>listar_RAM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menu.resx">
       <DependentUpon>menu.cs</DependentUpon>

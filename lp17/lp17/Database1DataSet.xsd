@@ -101,6 +101,25 @@ WHERE        (Sistema_Operativo LIKE '%' + @sistema_operativo + '%')</CommandTex
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="Database1ConnectionString1 (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQuery" Modifier="Public" Name="ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ScalarQuery">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT sum([Memoria_RAM(gigabites)]) FROM Equipamentos</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Database1ConnectionString1 (Settings)" DbObjectName="dbo.Equipamentos" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ScalarQuery1" Modifier="Public" Name="ScalarQuery1" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ScalarQuery1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(*) AS Equipamento, Memoria_RAM_gibabites
+FROM            Equipamentos
+GROUP BY Memoria_RAM_gibabites
+HAVING        (Memoria_RAM_gibabites &lt; '4')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Placa de redeTableAdapter" GeneratorDataComponentClassName="Placa_de_redeTableAdapter" Name="Placa de rede" UserDataComponentName="Placa de redeTableAdapter">
@@ -184,6 +203,26 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')</Comm
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Equipamentos1TableAdapter" GeneratorDataComponentClassName="Equipamentos1TableAdapter" Name="Equipamentos1" UserDataComponentName="Equipamentos1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Database1ConnectionString1 (Settings)" DbObjectName="dbo.Equipamentos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(*) AS Equipamento, Memoria_RAM_gibabites
+FROM            Equipamentos
+GROUP BY Memoria_RAM_gibabites
+HAVING        (Memoria_RAM_gibabites &lt; '4')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Equipamento" DataSetColumn="Equipamento" />
+              <Mapping SourceColumn="Memoria_RAM_gibabites" DataSetColumn="Memoria_RAM_gibabites" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -192,7 +231,78 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')</Comm
   <xs:element name="Database1DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Database1DataSet" msprop:Generator_UserDSName="Database1DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Equipamentos" msprop:Generator_TableClassName="EquipamentosDataTable" msprop:Generator_TableVarName="tableEquipamentos" msprop:Generator_TablePropName="Equipamentos" msprop:Generator_RowDeletingName="EquipamentosRowDeleting" msprop:Generator_RowChangingName="EquipamentosRowChanging" msprop:Generator_RowEvHandlerName="EquipamentosRowChangeEventHandler" msprop:Generator_RowDeletedName="EquipamentosRowDeleted" msprop:Generator_UserTableName="Equipamentos" msprop:Generator_RowChangedName="EquipamentosRowChanged" msprop:Generator_RowEvArgName="EquipamentosRowChangeEvent" msprop:Generator_RowClassName="EquipamentosRow">
+        <xs:element name="Placa_x0020_de_x0020_rede" msprop:Generator_TableClassName="Placa_de_redeDataTable" msprop:Generator_TableVarName="tablePlaca_de_rede" msprop:Generator_RowChangedName="Placa_de_redeRowChanged" msprop:Generator_TablePropName="Placa_de_rede" msprop:Generator_RowDeletingName="Placa_de_redeRowDeleting" msprop:Generator_RowChangingName="Placa_de_redeRowChanging" msprop:Generator_RowEvHandlerName="Placa_de_redeRowChangeEventHandler" msprop:Generator_RowDeletedName="Placa_de_redeRowDeleted" msprop:Generator_RowClassName="Placa_de_redeRow" msprop:Generator_UserTableName="Placa de rede" msprop:Generator_RowEvArgName="Placa_de_redeRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_placa" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_placa" msprop:Generator_ColumnPropNameInRow="id_placa" msprop:Generator_ColumnPropNameInTable="id_placaColumn" msprop:Generator_UserColumnName="id_placa" type="xs:int" />
+              <xs:element name="endereço_IP" msprop:Generator_ColumnVarNameInTable="columnendereço_IP" msprop:Generator_ColumnPropNameInRow="endereço_IP" msprop:Generator_ColumnPropNameInTable="endereço_IPColumn" msprop:Generator_UserColumnName="endereço_IP">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="endereco_broadcast" msprop:Generator_ColumnVarNameInTable="columnendereco_broadcast" msprop:Generator_ColumnPropNameInRow="endereco_broadcast" msprop:Generator_ColumnPropNameInTable="endereco_broadcastColumn" msprop:Generator_UserColumnName="endereco_broadcast">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="data_de_aqusicao" msprop:Generator_ColumnVarNameInTable="columndata_de_aqusicao" msprop:Generator_ColumnPropNameInRow="data_de_aqusicao" msprop:Generator_ColumnPropNameInTable="data_de_aqusicaoColumn" msprop:Generator_UserColumnName="data_de_aqusicao" type="xs:dateTime" />
+              <xs:element name="garantia_meses" msprop:Generator_ColumnVarNameInTable="columngarantia_meses" msprop:Generator_ColumnPropNameInRow="garantia_meses" msprop:Generator_ColumnPropNameInTable="garantia_mesesColumn" msprop:Generator_UserColumnName="garantia_meses" type="xs:int" />
+              <xs:element name="CPU_x0028_marca_x0029_" msprop:Generator_ColumnVarNameInTable="_columnCPU_marca_" msprop:Generator_ColumnPropNameInRow="_CPU_marca_" msprop:Generator_ColumnPropNameInTable="_CPU_marca_Column" msprop:Generator_UserColumnName="CPU(marca)">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Disco_Duro_x0028_gigabites_x0029_" msprop:Generator_ColumnVarNameInTable="_columnDisco_Duro_gigabites_" msprop:Generator_ColumnPropNameInRow="_Disco_Duro_gigabites_" msprop:Generator_ColumnPropNameInTable="_Disco_Duro_gigabites_Column" msprop:Generator_UserColumnName="Disco_Duro(gigabites)">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Memoria_RAM_x0028_gibabites_x0029_" msprop:Generator_ColumnVarNameInTable="_columnMemoria_RAM_gibabites_" msprop:Generator_ColumnPropNameInRow="_Memoria_RAM_gibabites_" msprop:Generator_ColumnPropNameInTable="_Memoria_RAM_gibabites_Column" msprop:Generator_UserColumnName="Memoria_RAM(gibabites)">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sistema_Operativo" msprop:Generator_ColumnVarNameInTable="columnSistema_Operativo" msprop:Generator_ColumnPropNameInRow="Sistema_Operativo" msprop:Generator_ColumnPropNameInTable="Sistema_OperativoColumn" msprop:Generator_UserColumnName="Sistema_Operativo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="endereço_IP" msprop:Generator_ColumnVarNameInTable="columnendereço_IP" msprop:Generator_ColumnPropNameInRow="endereço_IP" msprop:Generator_ColumnPropNameInTable="endereço_IPColumn" msprop:Generator_UserColumnName="endereço_IP">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Equipamentos" msprop:Generator_TableClassName="EquipamentosDataTable" msprop:Generator_TableVarName="tableEquipamentos" msprop:Generator_RowChangedName="EquipamentosRowChanged" msprop:Generator_TablePropName="Equipamentos" msprop:Generator_RowDeletingName="EquipamentosRowDeleting" msprop:Generator_RowChangingName="EquipamentosRowChanging" msprop:Generator_RowEvHandlerName="EquipamentosRowChangeEventHandler" msprop:Generator_RowDeletedName="EquipamentosRowDeleted" msprop:Generator_RowClassName="EquipamentosRow" msprop:Generator_UserTableName="Equipamentos" msprop:Generator_RowEvArgName="EquipamentosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_equipamento" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_equipamento" msprop:Generator_ColumnPropNameInRow="id_equipamento" msprop:Generator_ColumnPropNameInTable="id_equipamentoColumn" msprop:Generator_UserColumnName="id_equipamento" type="xs:int" />
@@ -237,68 +347,11 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')</Comm
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Placa_x0020_de_x0020_rede" msprop:Generator_TableClassName="Placa_de_redeDataTable" msprop:Generator_TableVarName="tablePlaca_de_rede" msprop:Generator_TablePropName="Placa_de_rede" msprop:Generator_RowDeletingName="Placa_de_redeRowDeleting" msprop:Generator_RowChangingName="Placa_de_redeRowChanging" msprop:Generator_RowEvHandlerName="Placa_de_redeRowChangeEventHandler" msprop:Generator_RowDeletedName="Placa_de_redeRowDeleted" msprop:Generator_UserTableName="Placa de rede" msprop:Generator_RowChangedName="Placa_de_redeRowChanged" msprop:Generator_RowEvArgName="Placa_de_redeRowChangeEvent" msprop:Generator_RowClassName="Placa_de_redeRow">
+        <xs:element name="Equipamentos1" msprop:Generator_TableClassName="Equipamentos1DataTable" msprop:Generator_TableVarName="tableEquipamentos1" msprop:Generator_TablePropName="Equipamentos1" msprop:Generator_RowDeletingName="Equipamentos1RowDeleting" msprop:Generator_RowChangingName="Equipamentos1RowChanging" msprop:Generator_RowEvHandlerName="Equipamentos1RowChangeEventHandler" msprop:Generator_RowDeletedName="Equipamentos1RowDeleted" msprop:Generator_UserTableName="Equipamentos1" msprop:Generator_RowChangedName="Equipamentos1RowChanged" msprop:Generator_RowEvArgName="Equipamentos1RowChangeEvent" msprop:Generator_RowClassName="Equipamentos1Row">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_placa" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_placa" msprop:Generator_ColumnPropNameInRow="id_placa" msprop:Generator_ColumnPropNameInTable="id_placaColumn" msprop:Generator_UserColumnName="id_placa" type="xs:int" />
-              <xs:element name="endereço_IP" msprop:Generator_ColumnVarNameInTable="columnendereço_IP" msprop:Generator_ColumnPropNameInRow="endereço_IP" msprop:Generator_ColumnPropNameInTable="endereço_IPColumn" msprop:Generator_UserColumnName="endereço_IP">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="endereco_broadcast" msprop:Generator_ColumnVarNameInTable="columnendereco_broadcast" msprop:Generator_ColumnPropNameInRow="endereco_broadcast" msprop:Generator_ColumnPropNameInTable="endereco_broadcastColumn" msprop:Generator_UserColumnName="endereco_broadcast">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="data_de_aqusicao" msprop:Generator_ColumnVarNameInTable="columndata_de_aqusicao" msprop:Generator_ColumnPropNameInRow="data_de_aqusicao" msprop:Generator_ColumnPropNameInTable="data_de_aqusicaoColumn" msprop:Generator_UserColumnName="data_de_aqusicao" type="xs:dateTime" />
-              <xs:element name="garantia_meses" msprop:Generator_ColumnVarNameInTable="columngarantia_meses" msprop:Generator_ColumnPropNameInRow="garantia_meses" msprop:Generator_ColumnPropNameInTable="garantia_mesesColumn" msprop:Generator_UserColumnName="garantia_meses" type="xs:int" />
-              <xs:element name="CPU_x0028_marca_x0029_" msprop:Generator_ColumnVarNameInTable="_columnCPU_marca_" msprop:Generator_ColumnPropNameInRow="_CPU_marca_" msprop:Generator_ColumnPropNameInTable="_CPU_marca_Column" msprop:Generator_UserColumnName="CPU(marca)">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Disco_Duro_x0028_gigabites_x0029_" msprop:Generator_ColumnVarNameInTable="_columnDisco_Duro_gigabites_" msprop:Generator_ColumnPropNameInRow="_Disco_Duro_gigabites_" msprop:Generator_ColumnPropNameInTable="_Disco_Duro_gigabites_Column" msprop:Generator_UserColumnName="Disco_Duro(gigabites)">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Memoria_RAM_x0028_gibabites_x0029_" msprop:Generator_ColumnVarNameInTable="_columnMemoria_RAM_gibabites_" msprop:Generator_ColumnPropNameInRow="_Memoria_RAM_gibabites_" msprop:Generator_ColumnPropNameInTable="_Memoria_RAM_gibabites_Column" msprop:Generator_UserColumnName="Memoria_RAM(gibabites)">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Sistema_Operativo" msprop:Generator_ColumnVarNameInTable="columnSistema_Operativo" msprop:Generator_ColumnPropNameInRow="Sistema_Operativo" msprop:Generator_ColumnPropNameInTable="Sistema_OperativoColumn" msprop:Generator_UserColumnName="Sistema_Operativo">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="endereço_IP" msprop:Generator_ColumnVarNameInTable="columnendereço_IP" msprop:Generator_ColumnPropNameInRow="endereço_IP" msprop:Generator_ColumnPropNameInTable="endereço_IPColumn" msprop:Generator_UserColumnName="endereço_IP">
+              <xs:element name="Equipamento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEquipamento" msprop:Generator_ColumnPropNameInRow="Equipamento" msprop:Generator_ColumnPropNameInTable="EquipamentoColumn" msprop:Generator_UserColumnName="Equipamento" type="xs:int" minOccurs="0" />
+              <xs:element name="Memoria_RAM_gibabites" msprop:Generator_ColumnVarNameInTable="columnMemoria_RAM_gibabites" msprop:Generator_ColumnPropNameInRow="Memoria_RAM_gibabites" msprop:Generator_ColumnPropNameInTable="Memoria_RAM_gibabitesColumn" msprop:Generator_UserColumnName="Memoria_RAM_gibabites">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -311,17 +364,17 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')</Comm
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Equipamentos" />
-      <xs:field xpath="mstns:id_equipamento" />
-    </xs:unique>
-    <xs:unique name="Placa_x0020_de_x0020_rede_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Placa_x0020_de_x0020_rede" />
       <xs:field xpath="mstns:id_placa" />
+    </xs:unique>
+    <xs:unique name="Equipamentos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Equipamentos" />
+      <xs:field xpath="mstns:id_equipamento" />
     </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Equipamentos_Placa_x0020_de_x0020_rede1" msdata:parent="Placa_x0020_de_x0020_rede" msdata:child="Equipamentos" msdata:parentkey="id_placa" msdata:childkey="placas_de_rede" msprop:Generator_UserChildTable="Equipamentos" msprop:Generator_ChildPropName="GetEquipamentosRows" msprop:Generator_UserRelationName="FK_Equipamentos_Placa de rede1" msprop:Generator_ParentPropName="Placa_de_redeRow" msprop:Generator_RelationVarName="relationFK_Equipamentos_Placa_de_rede1" msprop:Generator_UserParentTable="Placa de rede" />
+      <msdata:Relationship name="FK_Equipamentos_Placa_x0020_de_x0020_rede1" msdata:parent="Placa_x0020_de_x0020_rede" msdata:child="Equipamentos" msdata:parentkey="id_placa" msdata:childkey="placas_de_rede" msprop:Generator_UserChildTable="Equipamentos" msprop:Generator_ChildPropName="GetEquipamentosRows" msprop:Generator_UserRelationName="FK_Equipamentos_Placa de rede1" msprop:Generator_RelationVarName="relationFK_Equipamentos_Placa_de_rede1" msprop:Generator_UserParentTable="Placa de rede" msprop:Generator_ParentPropName="Placa_de_redeRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
