@@ -28,5 +28,11 @@ namespace lp17
             novaform.Show();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            pesquisar_equi novaform = new pesquisar_equi();
+            novaform.Show();
+        }
     }
 }

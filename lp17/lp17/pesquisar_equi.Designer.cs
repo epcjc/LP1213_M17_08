@@ -1,6 +1,6 @@
 ﻿namespace lp17
 {
-    partial class Le_1
+    partial class pesquisar_equi
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Le_1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pesquisar_equi));
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.database1DataSet = new lp17.Database1DataSet();
             this.equipamentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.equipamentosTableAdapter = new lp17.Database1DataSetTableAdapters.EquipamentosTableAdapter();
@@ -63,6 +65,23 @@
             this.equipamentosBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.equipamentosDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(157, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(50, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "pesquisar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // database1DataSet
             // 
@@ -111,8 +130,8 @@
             this.equipamentosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.equipamentosBindingNavigator.Name = "equipamentosBindingNavigator";
             this.equipamentosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.equipamentosBindingNavigator.Size = new System.Drawing.Size(487, 25);
-            this.equipamentosBindingNavigator.TabIndex = 0;
+            this.equipamentosBindingNavigator.Size = new System.Drawing.Size(771, 25);
+            this.equipamentosBindingNavigator.TabIndex = 3;
             this.equipamentosBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorMoveFirstItem
@@ -224,10 +243,10 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.equipamentosDataGridView.DataSource = this.equipamentosBindingSource;
-            this.equipamentosDataGridView.Location = new System.Drawing.Point(167, 36);
+            this.equipamentosDataGridView.Location = new System.Drawing.Point(12, 80);
             this.equipamentosDataGridView.Name = "equipamentosDataGridView";
-            this.equipamentosDataGridView.Size = new System.Drawing.Size(300, 220);
-            this.equipamentosDataGridView.TabIndex = 1;
+            this.equipamentosDataGridView.Size = new System.Drawing.Size(747, 220);
+            this.equipamentosDataGridView.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -284,16 +303,18 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "placas_de_rede";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
-            // Le_1
+            // pesquisar_equi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 277);
+            this.ClientSize = new System.Drawing.Size(771, 335);
             this.Controls.Add(this.equipamentosDataGridView);
             this.Controls.Add(this.equipamentosBindingNavigator);
-            this.Name = "Le_1";
-            this.Text = "Le_1";
-            this.Load += new System.EventHandler(this.Le_1_Load);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Name = "pesquisar_equi";
+            this.Text = "pesquisar_equi";
+            this.Load += new System.EventHandler(this.pesquisar_equi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipamentosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipamentosBindingNavigator)).EndInit();
@@ -307,6 +328,8 @@
 
         #endregion
 
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
         private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource equipamentosBindingSource;
         private Database1DataSetTableAdapters.EquipamentosTableAdapter equipamentosTableAdapter;
@@ -334,7 +357,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-
-
     }
 }

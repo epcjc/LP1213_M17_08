@@ -88,12 +88,6 @@
     <Compile Include="inserir_placa.Designer.cs">
       <DependentUpon>inserir_placa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Le_1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Le_1.Designer.cs">
-      <DependentUpon>Le_1.cs</DependentUpon>
-    </Compile>
     <Compile Include="listar_equi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,11 +100,29 @@
     <Compile Include="listar_placa.Designer.cs">
       <DependentUpon>listar_placa.cs</DependentUpon>
     </Compile>
+    <Compile Include="listar_tt_memoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listar_tt_memoria.Designer.cs">
+      <DependentUpon>listar_tt_memoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="menu.Designer.cs">
       <DependentUpon>menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisar_equi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisar_equi.Designer.cs">
+      <DependentUpon>pesquisar_equi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisar_placa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisar_placa.Designer.cs">
+      <DependentUpon>pesquisar_placa.cs</DependentUpon>
     </Compile>
     <Compile Include="placas.cs">
       <SubType>Form</SubType>
@@ -129,14 +141,20 @@
     <EmbeddedResource Include="inserir_placa.resx">
       <DependentUpon>inserir_placa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Le_1.resx">
-      <DependentUpon>Le_1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="listar_equi.resx">
       <DependentUpon>listar_equi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="listar_tt_memoria.resx">
+      <DependentUpon>listar_tt_memoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="menu.resx">
       <DependentUpon>menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisar_equi.resx">
+      <DependentUpon>pesquisar_equi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisar_placa.resx">
+      <DependentUpon>pesquisar_placa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="placas.resx">
       <DependentUpon>placas.cs</DependentUpon>
