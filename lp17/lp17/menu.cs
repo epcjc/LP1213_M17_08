@@ -34,5 +34,11 @@ namespace lp17
         {
             Help.ShowHelp(this, "ajuda.chm");
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            REPORTS novaform = new REPORTS();
+            novaform.Show();
+        }
     }
 }
