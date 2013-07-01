@@ -28,11 +28,31 @@ namespace lp17
         {
             // TODO: This line of code loads data into the 'database1DataSet.Equipamentos' table. You can move, or remove it, as needed.
             this.equipamentosTableAdapter.Fill(this.database1DataSet.Equipamentos);
+            // TODO: This line of code loads data into the 'database1DataSet.Equipamentos' table. You can move, or remove it, as needed.
+            this.equipamentosTableAdapter.Fill(this.database1DataSet.Equipamentos);
+            // TODO: This line of code loads data into the 'database1DataSet.Equipamentos' table. You can move, or remove it, as needed.
+            this.equipamentosTableAdapter.Fill(this.database1DataSet.Equipamentos);
 
         }
 
         private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void equipamentosBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.equipamentosBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.database1DataSet);
+
+        }
+
+        private void equipamentosBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.equipamentosBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.database1DataSet);
 
         }
     }

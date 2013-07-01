@@ -29,5 +29,10 @@ namespace lp17
             placas novaform = new placas();
             novaform.Show();
         }
+
+        private void menu_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            Help.ShowHelp(this, "ajuda.chm");
+        }
     }
 }

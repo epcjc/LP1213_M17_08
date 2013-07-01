@@ -22,16 +22,16 @@ namespace lp17
             novaform.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            listar_placa novaform = new listar_placa();
-            novaform.Show();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             pesquisar_placa novaform = new pesquisar_placa();
             novaform.Show();
         }
-    }
-}
+
+        
+        }
+
+        
+        }
+    
+

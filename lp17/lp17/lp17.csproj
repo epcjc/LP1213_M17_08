@@ -98,11 +98,11 @@
     <Compile Include="listar_equi.Designer.cs">
       <DependentUpon>listar_equi.cs</DependentUpon>
     </Compile>
-    <Compile Include="listar_placa.cs">
+    <Compile Include="listar_garantia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="listar_placa.Designer.cs">
-      <DependentUpon>listar_placa.cs</DependentUpon>
+    <Compile Include="listar_garantia.Designer.cs">
+      <DependentUpon>listar_garantia.cs</DependentUpon>
     </Compile>
     <Compile Include="listar_RAM.cs">
       <SubType>Form</SubType>
@@ -148,6 +148,9 @@
     <EmbeddedResource Include="listar_equi.resx">
       <DependentUpon>listar_equi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="listar_garantia.resx">
+      <DependentUpon>listar_garantia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="listar_RAM.resx">
       <DependentUpon>listar_RAM.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +175,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ajuda.chm" />
     <None Include="app.config" />
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>

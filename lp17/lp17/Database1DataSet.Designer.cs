@@ -32,6 +32,8 @@ namespace lp17 {
         
         private Equipamentos1DataTable tableEquipamentos1;
         
+        private Equipamentos2DataTable tableEquipamentos2;
+        
         private global::System.Data.DataRelation relationFK_Equipamentos_Placa_de_rede1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
@@ -73,6 +75,9 @@ namespace lp17 {
                 }
                 if ((ds.Tables["Equipamentos1"] != null)) {
                     base.Tables.Add(new Equipamentos1DataTable(ds.Tables["Equipamentos1"]));
+                }
+                if ((ds.Tables["Equipamentos2"] != null)) {
+                    base.Tables.Add(new Equipamentos2DataTable(ds.Tables["Equipamentos2"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -129,6 +134,16 @@ namespace lp17 {
         public Equipamentos1DataTable Equipamentos1 {
             get {
                 return this.tableEquipamentos1;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Equipamentos2DataTable Equipamentos2 {
+            get {
+                return this.tableEquipamentos2;
             }
         }
         
@@ -211,6 +226,9 @@ namespace lp17 {
                 if ((ds.Tables["Equipamentos1"] != null)) {
                     base.Tables.Add(new Equipamentos1DataTable(ds.Tables["Equipamentos1"]));
                 }
+                if ((ds.Tables["Equipamentos2"] != null)) {
+                    base.Tables.Add(new Equipamentos2DataTable(ds.Tables["Equipamentos2"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -268,6 +286,12 @@ namespace lp17 {
                     this.tableEquipamentos1.InitVars();
                 }
             }
+            this.tableEquipamentos2 = ((Equipamentos2DataTable)(base.Tables["Equipamentos2"]));
+            if ((initTable == true)) {
+                if ((this.tableEquipamentos2 != null)) {
+                    this.tableEquipamentos2.InitVars();
+                }
+            }
             this.relationFK_Equipamentos_Placa_de_rede1 = this.Relations["FK_Equipamentos_Placa de rede1"];
         }
         
@@ -287,6 +311,8 @@ namespace lp17 {
             base.Tables.Add(this.tableDataTable1);
             this.tableEquipamentos1 = new Equipamentos1DataTable();
             base.Tables.Add(this.tableEquipamentos1);
+            this.tableEquipamentos2 = new Equipamentos2DataTable();
+            base.Tables.Add(this.tableEquipamentos2);
             this.relationFK_Equipamentos_Placa_de_rede1 = new global::System.Data.DataRelation("FK_Equipamentos_Placa de rede1", new global::System.Data.DataColumn[] {
                         this.tablePlaca_de_rede.id_placaColumn}, new global::System.Data.DataColumn[] {
                         this.tableEquipamentos.placas_de_redeColumn}, false);
@@ -314,6 +340,12 @@ namespace lp17 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeEquipamentos1() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeEquipamentos2() {
             return false;
         }
         
@@ -384,6 +416,9 @@ namespace lp17 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void Equipamentos1RowChangeEventHandler(object sender, Equipamentos1RowChangeEvent e);
         
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void Equipamentos2RowChangeEventHandler(object sender, Equipamentos2RowChangeEvent e);
+        
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
@@ -401,13 +436,13 @@ namespace lp17 {
             
             private global::System.Data.DataColumn _columnCPU_marca_;
             
-            private global::System.Data.DataColumn _columnDisco_Duro_gigabites_;
-            
-            private global::System.Data.DataColumn _columnMemoria_RAM_gibabites_;
-            
             private global::System.Data.DataColumn columnSistema_Operativo;
             
             private global::System.Data.DataColumn columnplacas_de_rede;
+            
+            private global::System.Data.DataColumn columnDisco_Duro_gigabites;
+            
+            private global::System.Data.DataColumn columnMemoria_RAM_gibabites;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -484,22 +519,6 @@ namespace lp17 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _Disco_Duro_gigabites_Column {
-                get {
-                    return this._columnDisco_Duro_gigabites_;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _Memoria_RAM_gibabites_Column {
-                get {
-                    return this._columnMemoria_RAM_gibabites_;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn Sistema_OperativoColumn {
                 get {
                     return this.columnSistema_Operativo;
@@ -511,6 +530,22 @@ namespace lp17 {
             public global::System.Data.DataColumn placas_de_redeColumn {
                 get {
                     return this.columnplacas_de_rede;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Disco_Duro_gigabitesColumn {
+                get {
+                    return this.columnDisco_Duro_gigabites;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Memoria_RAM_gibabitesColumn {
+                get {
+                    return this.columnMemoria_RAM_gibabites;
                 }
             }
             
@@ -551,7 +586,7 @@ namespace lp17 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EquipamentosRow AddEquipamentosRow(string nome, System.DateTime data_de_aqusicao, int garantia_meses, string _CPU_marca_, string _Disco_Duro_gigabites_, string _Memoria_RAM_gibabites_, string Sistema_Operativo, Placa_de_redeRow parentPlaca_de_redeRowByFK_Equipamentos_Placa_de_rede1) {
+            public EquipamentosRow AddEquipamentosRow(string nome, System.DateTime data_de_aqusicao, int garantia_meses, string _CPU_marca_, string Sistema_Operativo, Placa_de_redeRow parentPlaca_de_redeRowByFK_Equipamentos_Placa_de_rede1, string Disco_Duro_gigabites, string Memoria_RAM_gibabites) {
                 EquipamentosRow rowEquipamentosRow = ((EquipamentosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -559,12 +594,12 @@ namespace lp17 {
                         data_de_aqusicao,
                         garantia_meses,
                         _CPU_marca_,
-                        _Disco_Duro_gigabites_,
-                        _Memoria_RAM_gibabites_,
                         Sistema_Operativo,
-                        null};
+                        null,
+                        Disco_Duro_gigabites,
+                        Memoria_RAM_gibabites};
                 if ((parentPlaca_de_redeRowByFK_Equipamentos_Placa_de_rede1 != null)) {
-                    columnValuesArray[8] = parentPlaca_de_redeRowByFK_Equipamentos_Placa_de_rede1[0];
+                    columnValuesArray[6] = parentPlaca_de_redeRowByFK_Equipamentos_Placa_de_rede1[0];
                 }
                 rowEquipamentosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEquipamentosRow);
@@ -600,10 +635,10 @@ namespace lp17 {
                 this.columndata_de_aqusicao = base.Columns["data_de_aqusicao"];
                 this.columngarantia_meses = base.Columns["garantia_meses"];
                 this._columnCPU_marca_ = base.Columns["CPU(marca)"];
-                this._columnDisco_Duro_gigabites_ = base.Columns["Disco_Duro(gigabites)"];
-                this._columnMemoria_RAM_gibabites_ = base.Columns["Memoria_RAM(gibabites)"];
                 this.columnSistema_Operativo = base.Columns["Sistema_Operativo"];
                 this.columnplacas_de_rede = base.Columns["placas_de_rede"];
+                this.columnDisco_Duro_gigabites = base.Columns["Disco_Duro_gigabites"];
+                this.columnMemoria_RAM_gibabites = base.Columns["Memoria_RAM_gibabites"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -621,18 +656,14 @@ namespace lp17 {
                 this._columnCPU_marca_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnCPU_marca_");
                 this._columnCPU_marca_.ExtendedProperties.Add("Generator_UserColumnName", "CPU(marca)");
                 base.Columns.Add(this._columnCPU_marca_);
-                this._columnDisco_Duro_gigabites_ = new global::System.Data.DataColumn("Disco_Duro(gigabites)", typeof(string), null, global::System.Data.MappingType.Element);
-                this._columnDisco_Duro_gigabites_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnDisco_Duro_gigabites_");
-                this._columnDisco_Duro_gigabites_.ExtendedProperties.Add("Generator_UserColumnName", "Disco_Duro(gigabites)");
-                base.Columns.Add(this._columnDisco_Duro_gigabites_);
-                this._columnMemoria_RAM_gibabites_ = new global::System.Data.DataColumn("Memoria_RAM(gibabites)", typeof(string), null, global::System.Data.MappingType.Element);
-                this._columnMemoria_RAM_gibabites_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnMemoria_RAM_gibabites_");
-                this._columnMemoria_RAM_gibabites_.ExtendedProperties.Add("Generator_UserColumnName", "Memoria_RAM(gibabites)");
-                base.Columns.Add(this._columnMemoria_RAM_gibabites_);
                 this.columnSistema_Operativo = new global::System.Data.DataColumn("Sistema_Operativo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSistema_Operativo);
                 this.columnplacas_de_rede = new global::System.Data.DataColumn("placas_de_rede", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnplacas_de_rede);
+                this.columnDisco_Duro_gigabites = new global::System.Data.DataColumn("Disco_Duro_gigabites", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDisco_Duro_gigabites);
+                this.columnMemoria_RAM_gibabites = new global::System.Data.DataColumn("Memoria_RAM_gibabites", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMemoria_RAM_gibabites);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_equipamento}, true));
                 this.columnid_equipamento.AutoIncrement = true;
@@ -647,13 +678,13 @@ namespace lp17 {
                 this.columngarantia_meses.AllowDBNull = false;
                 this._columnCPU_marca_.AllowDBNull = false;
                 this._columnCPU_marca_.MaxLength = 50;
-                this._columnDisco_Duro_gigabites_.AllowDBNull = false;
-                this._columnDisco_Duro_gigabites_.MaxLength = 50;
-                this._columnMemoria_RAM_gibabites_.AllowDBNull = false;
-                this._columnMemoria_RAM_gibabites_.MaxLength = 50;
                 this.columnSistema_Operativo.AllowDBNull = false;
                 this.columnSistema_Operativo.MaxLength = 50;
                 this.columnplacas_de_rede.AllowDBNull = false;
+                this.columnDisco_Duro_gigabites.AllowDBNull = false;
+                this.columnDisco_Duro_gigabites.MaxLength = 50;
+                this.columnMemoria_RAM_gibabites.AllowDBNull = false;
+                this.columnMemoria_RAM_gibabites.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1087,15 +1118,15 @@ namespace lp17 {
             
             private global::System.Data.DataColumn columngarantia_meses;
             
-            private global::System.Data.DataColumn _columnCPU_marca_;
-            
-            private global::System.Data.DataColumn _columnDisco_Duro_gigabites_;
-            
-            private global::System.Data.DataColumn _columnMemoria_RAM_gibabites_;
-            
             private global::System.Data.DataColumn columnSistema_Operativo;
             
             private global::System.Data.DataColumn columnendereço_IP;
+            
+            private global::System.Data.DataColumn columnExpr1;
+            
+            private global::System.Data.DataColumn columnMemoria_RAM_gibabites;
+            
+            private global::System.Data.DataColumn columnDisco_Duro_gigabites;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1156,30 +1187,6 @@ namespace lp17 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _CPU_marca_Column {
-                get {
-                    return this._columnCPU_marca_;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _Disco_Duro_gigabites_Column {
-                get {
-                    return this._columnDisco_Duro_gigabites_;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _Memoria_RAM_gibabites_Column {
-                get {
-                    return this._columnMemoria_RAM_gibabites_;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn Sistema_OperativoColumn {
                 get {
                     return this.columnSistema_Operativo;
@@ -1191,6 +1198,30 @@ namespace lp17 {
             public global::System.Data.DataColumn endereço_IPColumn {
                 get {
                     return this.columnendereço_IP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Expr1Column {
+                get {
+                    return this.columnExpr1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Memoria_RAM_gibabitesColumn {
+                get {
+                    return this.columnMemoria_RAM_gibabites;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Disco_Duro_gigabitesColumn {
+                get {
+                    return this.columnDisco_Duro_gigabites;
                 }
             }
             
@@ -1231,17 +1262,17 @@ namespace lp17 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string nome, System.DateTime data_de_aqusicao, int garantia_meses, string _CPU_marca_, string _Disco_Duro_gigabites_, string _Memoria_RAM_gibabites_, string Sistema_Operativo, string endereço_IP) {
+            public DataTable1Row AddDataTable1Row(string nome, System.DateTime data_de_aqusicao, int garantia_meses, string Sistema_Operativo, string endereço_IP, string Expr1, string Memoria_RAM_gibabites, string Disco_Duro_gigabites) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         nome,
                         data_de_aqusicao,
                         garantia_meses,
-                        _CPU_marca_,
-                        _Disco_Duro_gigabites_,
-                        _Memoria_RAM_gibabites_,
                         Sistema_Operativo,
-                        endereço_IP};
+                        endereço_IP,
+                        Expr1,
+                        Memoria_RAM_gibabites,
+                        Disco_Duro_gigabites};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -1267,11 +1298,11 @@ namespace lp17 {
                 this.columnnome = base.Columns["nome"];
                 this.columndata_de_aqusicao = base.Columns["data_de_aqusicao"];
                 this.columngarantia_meses = base.Columns["garantia_meses"];
-                this._columnCPU_marca_ = base.Columns["CPU(marca)"];
-                this._columnDisco_Duro_gigabites_ = base.Columns["Disco_Duro(gigabites)"];
-                this._columnMemoria_RAM_gibabites_ = base.Columns["Memoria_RAM(gibabites)"];
                 this.columnSistema_Operativo = base.Columns["Sistema_Operativo"];
                 this.columnendereço_IP = base.Columns["endereço_IP"];
+                this.columnExpr1 = base.Columns["Expr1"];
+                this.columnMemoria_RAM_gibabites = base.Columns["Memoria_RAM_gibabites"];
+                this.columnDisco_Duro_gigabites = base.Columns["Disco_Duro_gigabites"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1283,36 +1314,30 @@ namespace lp17 {
                 base.Columns.Add(this.columndata_de_aqusicao);
                 this.columngarantia_meses = new global::System.Data.DataColumn("garantia_meses", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngarantia_meses);
-                this._columnCPU_marca_ = new global::System.Data.DataColumn("CPU(marca)", typeof(string), null, global::System.Data.MappingType.Element);
-                this._columnCPU_marca_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnCPU_marca_");
-                this._columnCPU_marca_.ExtendedProperties.Add("Generator_UserColumnName", "CPU(marca)");
-                base.Columns.Add(this._columnCPU_marca_);
-                this._columnDisco_Duro_gigabites_ = new global::System.Data.DataColumn("Disco_Duro(gigabites)", typeof(string), null, global::System.Data.MappingType.Element);
-                this._columnDisco_Duro_gigabites_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnDisco_Duro_gigabites_");
-                this._columnDisco_Duro_gigabites_.ExtendedProperties.Add("Generator_UserColumnName", "Disco_Duro(gigabites)");
-                base.Columns.Add(this._columnDisco_Duro_gigabites_);
-                this._columnMemoria_RAM_gibabites_ = new global::System.Data.DataColumn("Memoria_RAM(gibabites)", typeof(string), null, global::System.Data.MappingType.Element);
-                this._columnMemoria_RAM_gibabites_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnMemoria_RAM_gibabites_");
-                this._columnMemoria_RAM_gibabites_.ExtendedProperties.Add("Generator_UserColumnName", "Memoria_RAM(gibabites)");
-                base.Columns.Add(this._columnMemoria_RAM_gibabites_);
                 this.columnSistema_Operativo = new global::System.Data.DataColumn("Sistema_Operativo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSistema_Operativo);
                 this.columnendereço_IP = new global::System.Data.DataColumn("endereço_IP", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnendereço_IP);
+                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr1);
+                this.columnMemoria_RAM_gibabites = new global::System.Data.DataColumn("Memoria_RAM_gibabites", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMemoria_RAM_gibabites);
+                this.columnDisco_Duro_gigabites = new global::System.Data.DataColumn("Disco_Duro_gigabites", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDisco_Duro_gigabites);
                 this.columnnome.AllowDBNull = false;
                 this.columnnome.MaxLength = 50;
                 this.columndata_de_aqusicao.AllowDBNull = false;
                 this.columngarantia_meses.AllowDBNull = false;
-                this._columnCPU_marca_.AllowDBNull = false;
-                this._columnCPU_marca_.MaxLength = 50;
-                this._columnDisco_Duro_gigabites_.AllowDBNull = false;
-                this._columnDisco_Duro_gigabites_.MaxLength = 50;
-                this._columnMemoria_RAM_gibabites_.AllowDBNull = false;
-                this._columnMemoria_RAM_gibabites_.MaxLength = 50;
                 this.columnSistema_Operativo.AllowDBNull = false;
                 this.columnSistema_Operativo.MaxLength = 50;
                 this.columnendereço_IP.AllowDBNull = false;
                 this.columnendereço_IP.MaxLength = 50;
+                this.columnExpr1.AllowDBNull = false;
+                this.columnExpr1.MaxLength = 50;
+                this.columnMemoria_RAM_gibabites.AllowDBNull = false;
+                this.columnMemoria_RAM_gibabites.MaxLength = 50;
+                this.columnDisco_Duro_gigabites.AllowDBNull = false;
+                this.columnDisco_Duro_gigabites.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1450,6 +1475,8 @@ namespace lp17 {
             
             private global::System.Data.DataColumn columnMemoria_RAM_gibabites;
             
+            private global::System.Data.DataColumn columnnome;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Equipamentos1DataTable() {
@@ -1501,6 +1528,14 @@ namespace lp17 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nomeColumn {
+                get {
+                    return this.columnnome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1536,11 +1571,12 @@ namespace lp17 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Equipamentos1Row AddEquipamentos1Row(int Equipamento, string Memoria_RAM_gibabites) {
+            public Equipamentos1Row AddEquipamentos1Row(int Equipamento, string Memoria_RAM_gibabites, string nome) {
                 Equipamentos1Row rowEquipamentos1Row = ((Equipamentos1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Equipamento,
-                        Memoria_RAM_gibabites};
+                        Memoria_RAM_gibabites,
+                        nome};
                 rowEquipamentos1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEquipamentos1Row);
                 return rowEquipamentos1Row;
@@ -1565,6 +1601,7 @@ namespace lp17 {
             internal void InitVars() {
                 this.columnEquipamento = base.Columns["Equipamento"];
                 this.columnMemoria_RAM_gibabites = base.Columns["Memoria_RAM_gibabites"];
+                this.columnnome = base.Columns["nome"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1574,9 +1611,13 @@ namespace lp17 {
                 base.Columns.Add(this.columnEquipamento);
                 this.columnMemoria_RAM_gibabites = new global::System.Data.DataColumn("Memoria_RAM_gibabites", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMemoria_RAM_gibabites);
+                this.columnnome = new global::System.Data.DataColumn("nome", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnome);
                 this.columnEquipamento.ReadOnly = true;
                 this.columnMemoria_RAM_gibabites.AllowDBNull = false;
                 this.columnMemoria_RAM_gibabites.MaxLength = 50;
+                this.columnnome.AllowDBNull = false;
+                this.columnnome.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1704,6 +1745,299 @@ namespace lp17 {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Equipamentos2DataTable : global::System.Data.TypedTableBase<Equipamentos2Row> {
+            
+            private global::System.Data.DataColumn columnnome;
+            
+            private global::System.Data.DataColumn columngarantia_meses;
+            
+            private global::System.Data.DataColumn columnid_equipamento;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Equipamentos2DataTable() {
+                this.TableName = "Equipamentos2";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Equipamentos2DataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected Equipamentos2DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nomeColumn {
+                get {
+                    return this.columnnome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn garantia_mesesColumn {
+                get {
+                    return this.columngarantia_meses;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_equipamentoColumn {
+                get {
+                    return this.columnid_equipamento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Equipamentos2Row this[int index] {
+                get {
+                    return ((Equipamentos2Row)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Equipamentos2RowChangeEventHandler Equipamentos2RowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Equipamentos2RowChangeEventHandler Equipamentos2RowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Equipamentos2RowChangeEventHandler Equipamentos2RowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Equipamentos2RowChangeEventHandler Equipamentos2RowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddEquipamentos2Row(Equipamentos2Row row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Equipamentos2Row AddEquipamentos2Row(string nome, int garantia_meses) {
+                Equipamentos2Row rowEquipamentos2Row = ((Equipamentos2Row)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        nome,
+                        garantia_meses,
+                        null};
+                rowEquipamentos2Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEquipamentos2Row);
+                return rowEquipamentos2Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Equipamentos2Row FindByid_equipamento(int id_equipamento) {
+                return ((Equipamentos2Row)(this.Rows.Find(new object[] {
+                            id_equipamento})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Equipamentos2DataTable cln = ((Equipamentos2DataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Equipamentos2DataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnnome = base.Columns["nome"];
+                this.columngarantia_meses = base.Columns["garantia_meses"];
+                this.columnid_equipamento = base.Columns["id_equipamento"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnnome = new global::System.Data.DataColumn("nome", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnome);
+                this.columngarantia_meses = new global::System.Data.DataColumn("garantia_meses", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngarantia_meses);
+                this.columnid_equipamento = new global::System.Data.DataColumn("id_equipamento", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_equipamento);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid_equipamento}, true));
+                this.columnnome.AllowDBNull = false;
+                this.columnnome.MaxLength = 50;
+                this.columngarantia_meses.AllowDBNull = false;
+                this.columnid_equipamento.AutoIncrement = true;
+                this.columnid_equipamento.AutoIncrementSeed = -1;
+                this.columnid_equipamento.AutoIncrementStep = -1;
+                this.columnid_equipamento.AllowDBNull = false;
+                this.columnid_equipamento.ReadOnly = true;
+                this.columnid_equipamento.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Equipamentos2Row NewEquipamentos2Row() {
+                return ((Equipamentos2Row)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Equipamentos2Row(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Equipamentos2Row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Equipamentos2RowChanged != null)) {
+                    this.Equipamentos2RowChanged(this, new Equipamentos2RowChangeEvent(((Equipamentos2Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Equipamentos2RowChanging != null)) {
+                    this.Equipamentos2RowChanging(this, new Equipamentos2RowChangeEvent(((Equipamentos2Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Equipamentos2RowDeleted != null)) {
+                    this.Equipamentos2RowDeleted(this, new Equipamentos2RowChangeEvent(((Equipamentos2Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Equipamentos2RowDeleting != null)) {
+                    this.Equipamentos2RowDeleting(this, new Equipamentos2RowChangeEvent(((Equipamentos2Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveEquipamentos2Row(Equipamentos2Row row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Database1DataSet ds = new Database1DataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Equipamentos2DataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class EquipamentosRow : global::System.Data.DataRow {
@@ -1774,28 +2108,6 @@ namespace lp17 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string _Disco_Duro_gigabites_ {
-                get {
-                    return ((string)(this[this.tableEquipamentos._Disco_Duro_gigabites_Column]));
-                }
-                set {
-                    this[this.tableEquipamentos._Disco_Duro_gigabites_Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string _Memoria_RAM_gibabites_ {
-                get {
-                    return ((string)(this[this.tableEquipamentos._Memoria_RAM_gibabites_Column]));
-                }
-                set {
-                    this[this.tableEquipamentos._Memoria_RAM_gibabites_Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Sistema_Operativo {
                 get {
                     return ((string)(this[this.tableEquipamentos.Sistema_OperativoColumn]));
@@ -1813,6 +2125,28 @@ namespace lp17 {
                 }
                 set {
                     this[this.tableEquipamentos.placas_de_redeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Disco_Duro_gigabites {
+                get {
+                    return ((string)(this[this.tableEquipamentos.Disco_Duro_gigabitesColumn]));
+                }
+                set {
+                    this[this.tableEquipamentos.Disco_Duro_gigabitesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Memoria_RAM_gibabites {
+                get {
+                    return ((string)(this[this.tableEquipamentos.Memoria_RAM_gibabitesColumn]));
+                }
+                set {
+                    this[this.tableEquipamentos.Memoria_RAM_gibabitesColumn] = value;
                 }
             }
             
@@ -1936,39 +2270,6 @@ namespace lp17 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string _CPU_marca_ {
-                get {
-                    return ((string)(this[this.tableDataTable1._CPU_marca_Column]));
-                }
-                set {
-                    this[this.tableDataTable1._CPU_marca_Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string _Disco_Duro_gigabites_ {
-                get {
-                    return ((string)(this[this.tableDataTable1._Disco_Duro_gigabites_Column]));
-                }
-                set {
-                    this[this.tableDataTable1._Disco_Duro_gigabites_Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string _Memoria_RAM_gibabites_ {
-                get {
-                    return ((string)(this[this.tableDataTable1._Memoria_RAM_gibabites_Column]));
-                }
-                set {
-                    this[this.tableDataTable1._Memoria_RAM_gibabites_Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Sistema_Operativo {
                 get {
                     return ((string)(this[this.tableDataTable1.Sistema_OperativoColumn]));
@@ -1986,6 +2287,39 @@ namespace lp17 {
                 }
                 set {
                     this[this.tableDataTable1.endereço_IPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Expr1 {
+                get {
+                    return ((string)(this[this.tableDataTable1.Expr1Column]));
+                }
+                set {
+                    this[this.tableDataTable1.Expr1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Memoria_RAM_gibabites {
+                get {
+                    return ((string)(this[this.tableDataTable1.Memoria_RAM_gibabitesColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.Memoria_RAM_gibabitesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Disco_Duro_gigabites {
+                get {
+                    return ((string)(this[this.tableDataTable1.Disco_Duro_gigabitesColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.Disco_Duro_gigabitesColumn] = value;
                 }
             }
         }
@@ -2033,6 +2367,17 @@ namespace lp17 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nome {
+                get {
+                    return ((string)(this[this.tableEquipamentos1.nomeColumn]));
+                }
+                set {
+                    this[this.tableEquipamentos1.nomeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsEquipamentoNull() {
                 return this.IsNull(this.tableEquipamentos1.EquipamentoColumn);
             }
@@ -2041,6 +2386,54 @@ namespace lp17 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEquipamentoNull() {
                 this[this.tableEquipamentos1.EquipamentoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Equipamentos2Row : global::System.Data.DataRow {
+            
+            private Equipamentos2DataTable tableEquipamentos2;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Equipamentos2Row(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableEquipamentos2 = ((Equipamentos2DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nome {
+                get {
+                    return ((string)(this[this.tableEquipamentos2.nomeColumn]));
+                }
+                set {
+                    this[this.tableEquipamentos2.nomeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int garantia_meses {
+                get {
+                    return ((int)(this[this.tableEquipamentos2.garantia_mesesColumn]));
+                }
+                set {
+                    this[this.tableEquipamentos2.garantia_mesesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_equipamento {
+                get {
+                    return ((int)(this[this.tableEquipamentos2.id_equipamentoColumn]));
+                }
+                set {
+                    this[this.tableEquipamentos2.id_equipamentoColumn] = value;
+                }
             }
         }
         
@@ -2166,6 +2559,40 @@ namespace lp17 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Equipamentos1Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class Equipamentos2RowChangeEvent : global::System.EventArgs {
+            
+            private Equipamentos2Row eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Equipamentos2RowChangeEvent(Equipamentos2Row row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Equipamentos2Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -2310,48 +2737,48 @@ namespace lp17.Database1DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("data_de_aqusicao", "data_de_aqusicao");
             tableMapping.ColumnMappings.Add("garantia_meses", "garantia_meses");
             tableMapping.ColumnMappings.Add("CPU(marca)", "CPU(marca)");
-            tableMapping.ColumnMappings.Add("Disco_Duro(gigabites)", "Disco_Duro(gigabites)");
-            tableMapping.ColumnMappings.Add("Memoria_RAM(gibabites)", "Memoria_RAM(gibabites)");
             tableMapping.ColumnMappings.Add("Sistema_Operativo", "Sistema_Operativo");
             tableMapping.ColumnMappings.Add("placas_de_rede", "placas_de_rede");
+            tableMapping.ColumnMappings.Add("Disco_Duro_gigabites", "Disco_Duro_gigabites");
+            tableMapping.ColumnMappings.Add("Memoria_RAM_gibabites", "Memoria_RAM_gibabites");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Equipamentos] WHERE (([id_equipamento] = @Original_id_equipamento) AND ([nome] = @Original_nome) AND ([data_de_aqusicao] = @Original_data_de_aqusicao) AND ([garantia_meses] = @Original_garantia_meses) AND ([CPU(marca)] = @p2) AND ([Disco_Duro(gigabites)] = @p4) AND ([Memoria_RAM(gibabites)] = @p6) AND ([Sistema_Operativo] = @Original_Sistema_Operativo) AND ([placas_de_rede] = @Original_placas_de_rede))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Equipamentos] WHERE (([id_equipamento] = @Original_id_equipamento) AND ([nome] = @Original_nome) AND ([data_de_aqusicao] = @Original_data_de_aqusicao) AND ([garantia_meses] = @Original_garantia_meses) AND ([CPU(marca)] = @p2) AND ([Disco_Duro_gigabites] = @Original_Disco_Duro_gigabites) AND ([Memoria_RAM_gibabites] = @Original_Memoria_RAM_gibabites) AND ([Sistema_Operativo] = @Original_Sistema_Operativo) AND ([placas_de_rede] = @Original_placas_de_rede))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_equipamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_equipamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_data_de_aqusicao", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_de_aqusicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_garantia_meses", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "garantia_meses", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPU(marca)", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Disco_Duro(gigabites)", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Memoria_RAM(gibabites)", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Disco_Duro_gigabites", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Disco_Duro_gigabites", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Memoria_RAM_gibabites", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Memoria_RAM_gibabites", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sistema_Operativo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sistema_Operativo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_placas_de_rede", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "placas_de_rede", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Equipamentos] ([nome], [data_de_aqusicao], [garantia_meses], [CPU(marca)], [Disco_Duro(gigabites)], [Memoria_RAM(gibabites)], [Sistema_Operativo], [placas_de_rede]) VALUES (@nome, @data_de_aqusicao, @garantia_meses, @p1, @p3, @p5, @Sistema_Operativo, @placas_de_rede);
-SELECT id_equipamento, nome, data_de_aqusicao, garantia_meses, [CPU(marca)], [Disco_Duro(gigabites)], [Memoria_RAM(gibabites)], Sistema_Operativo, placas_de_rede FROM Equipamentos WHERE (id_equipamento = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Equipamentos] ([nome], [data_de_aqusicao], [garantia_meses], [CPU(marca)], [Disco_Duro_gigabites], [Memoria_RAM_gibabites], [Sistema_Operativo], [placas_de_rede]) VALUES (@nome, @data_de_aqusicao, @garantia_meses, @p1, @Disco_Duro_gigabites, @Memoria_RAM_gibabites, @Sistema_Operativo, @placas_de_rede);
+SELECT id_equipamento, nome, data_de_aqusicao, garantia_meses, [CPU(marca)], Disco_Duro_gigabites, Memoria_RAM_gibabites, Sistema_Operativo, placas_de_rede FROM Equipamentos WHERE (id_equipamento = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@data_de_aqusicao", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_de_aqusicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@garantia_meses", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "garantia_meses", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPU(marca)", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Disco_Duro(gigabites)", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Memoria_RAM(gibabites)", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Disco_Duro_gigabites", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Disco_Duro_gigabites", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Memoria_RAM_gibabites", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Memoria_RAM_gibabites", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sistema_Operativo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sistema_Operativo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@placas_de_rede", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "placas_de_rede", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Equipamentos] SET [nome] = @nome, [data_de_aqusicao] = @data_de_aqusicao, [garantia_meses] = @garantia_meses, [CPU(marca)] = @p1, [Disco_Duro(gigabites)] = @p3, [Memoria_RAM(gibabites)] = @p5, [Sistema_Operativo] = @Sistema_Operativo, [placas_de_rede] = @placas_de_rede WHERE (([id_equipamento] = @Original_id_equipamento) AND ([nome] = @Original_nome) AND ([data_de_aqusicao] = @Original_data_de_aqusicao) AND ([garantia_meses] = @Original_garantia_meses) AND ([CPU(marca)] = @p2) AND ([Disco_Duro(gigabites)] = @p4) AND ([Memoria_RAM(gibabites)] = @p6) AND ([Sistema_Operativo] = @Original_Sistema_Operativo) AND ([placas_de_rede] = @Original_placas_de_rede));
-SELECT id_equipamento, nome, data_de_aqusicao, garantia_meses, [CPU(marca)], [Disco_Duro(gigabites)], [Memoria_RAM(gibabites)], Sistema_Operativo, placas_de_rede FROM Equipamentos WHERE (id_equipamento = @id_equipamento)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Equipamentos] SET [nome] = @nome, [data_de_aqusicao] = @data_de_aqusicao, [garantia_meses] = @garantia_meses, [CPU(marca)] = @p1, [Disco_Duro_gigabites] = @Disco_Duro_gigabites, [Memoria_RAM_gibabites] = @Memoria_RAM_gibabites, [Sistema_Operativo] = @Sistema_Operativo, [placas_de_rede] = @placas_de_rede WHERE (([id_equipamento] = @Original_id_equipamento) AND ([nome] = @Original_nome) AND ([data_de_aqusicao] = @Original_data_de_aqusicao) AND ([garantia_meses] = @Original_garantia_meses) AND ([CPU(marca)] = @p2) AND ([Disco_Duro_gigabites] = @Original_Disco_Duro_gigabites) AND ([Memoria_RAM_gibabites] = @Original_Memoria_RAM_gibabites) AND ([Sistema_Operativo] = @Original_Sistema_Operativo) AND ([placas_de_rede] = @Original_placas_de_rede));
+SELECT id_equipamento, nome, data_de_aqusicao, garantia_meses, [CPU(marca)], Disco_Duro_gigabites, Memoria_RAM_gibabites, Sistema_Operativo, placas_de_rede FROM Equipamentos WHERE (id_equipamento = @id_equipamento)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@data_de_aqusicao", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_de_aqusicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@garantia_meses", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "garantia_meses", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPU(marca)", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Disco_Duro(gigabites)", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Memoria_RAM(gibabites)", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Disco_Duro_gigabites", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Disco_Duro_gigabites", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Memoria_RAM_gibabites", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Memoria_RAM_gibabites", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sistema_Operativo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sistema_Operativo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@placas_de_rede", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "placas_de_rede", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_equipamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_equipamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2359,8 +2786,8 @@ SELECT id_equipamento, nome, data_de_aqusicao, garantia_meses, [CPU(marca)], [Di
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_data_de_aqusicao", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_de_aqusicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_garantia_meses", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "garantia_meses", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPU(marca)", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Disco_Duro(gigabites)", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Memoria_RAM(gibabites)", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Disco_Duro_gigabites", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Disco_Duro_gigabites", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Memoria_RAM_gibabites", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Memoria_RAM_gibabites", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sistema_Operativo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sistema_Operativo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_placas_de_rede", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "placas_de_rede", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_equipamento", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_equipamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2380,20 +2807,19 @@ SELECT id_equipamento, nome, data_de_aqusicao, garantia_meses, [CPU(marca)], [Di
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_equipamento, nome, data_de_aqusicao, garantia_meses, [CPU(marca)], [Dis" +
-                "co_Duro(gigabites)], [Memoria_RAM(gibabites)], Sistema_Operativo, placas_de_rede" +
-                " FROM dbo.Equipamentos";
+                "co_Duro_gigabites], [Memoria_RAM_gibabites], Sistema_Operativo, placas_de_rede F" +
+                "ROM dbo.Equipamentos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        id_equipamento, nome, data_de_aqusicao, garantia_meses, [CPU(marca)], [Disco_Duro(gigabites)], [Memoria_RAM(gibabites)], Sistema_Operativo, 
-                         placas_de_rede
-FROM            Equipamentos
-WHERE        (Sistema_Operativo LIKE '%' + @sistema_operativo + '%')";
+            this._commandCollection[1].CommandText = "SELECT [CPU(marca)], Disco_Duro_gigabites, Memoria_RAM_gibabites, Sistema_Operati" +
+                "vo, data_de_aqusicao, garantia_meses, id_equipamento, nome, placas_de_rede FROM " +
+                "Equipamentos WHERE (Sistema_Operativo LIKE \'%\' + @sistema_operativo + \'%\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sistema_operativo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Sistema_Operativo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT sum([Memoria_RAM(gigabites)]) FROM Equipamentos";
+            this._commandCollection[2].CommandText = "SELECT sum([Memoria_RAM_gigabites]) FROM Equipamentos";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
@@ -2496,7 +2922,7 @@ WHERE        (Sistema_Operativo LIKE '%' + @sistema_operativo + '%')";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id_equipamento, string Original_nome, System.DateTime Original_data_de_aqusicao, int Original_garantia_meses, string p2, string p4, string p6, string Original_Sistema_Operativo, int Original_placas_de_rede) {
+        public virtual int Delete(int Original_id_equipamento, string Original_nome, System.DateTime Original_data_de_aqusicao, int Original_garantia_meses, string p2, string Original_Disco_Duro_gigabites, string Original_Memoria_RAM_gibabites, string Original_Sistema_Operativo, int Original_placas_de_rede) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id_equipamento));
             if ((Original_nome == null)) {
                 throw new global::System.ArgumentNullException("Original_nome");
@@ -2512,17 +2938,17 @@ WHERE        (Sistema_Operativo LIKE '%' + @sistema_operativo + '%')";
             else {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(p2));
             }
-            if ((p4 == null)) {
-                throw new global::System.ArgumentNullException("p4");
+            if ((Original_Disco_Duro_gigabites == null)) {
+                throw new global::System.ArgumentNullException("Original_Disco_Duro_gigabites");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(p4));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Disco_Duro_gigabites));
             }
-            if ((p6 == null)) {
-                throw new global::System.ArgumentNullException("p6");
+            if ((Original_Memoria_RAM_gibabites == null)) {
+                throw new global::System.ArgumentNullException("Original_Memoria_RAM_gibabites");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(p6));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Memoria_RAM_gibabites));
             }
             if ((Original_Sistema_Operativo == null)) {
                 throw new global::System.ArgumentNullException("Original_Sistema_Operativo");
@@ -2551,7 +2977,7 @@ WHERE        (Sistema_Operativo LIKE '%' + @sistema_operativo + '%')";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string nome, System.DateTime data_de_aqusicao, int garantia_meses, string p1, string p3, string p5, string Sistema_Operativo, int placas_de_rede) {
+        public virtual int Insert(string nome, System.DateTime data_de_aqusicao, int garantia_meses, string p1, string Disco_Duro_gigabites, string Memoria_RAM_gibabites, string Sistema_Operativo, int placas_de_rede) {
             if ((nome == null)) {
                 throw new global::System.ArgumentNullException("nome");
             }
@@ -2566,17 +2992,17 @@ WHERE        (Sistema_Operativo LIKE '%' + @sistema_operativo + '%')";
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p1));
             }
-            if ((p3 == null)) {
-                throw new global::System.ArgumentNullException("p3");
+            if ((Disco_Duro_gigabites == null)) {
+                throw new global::System.ArgumentNullException("Disco_Duro_gigabites");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p3));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Disco_Duro_gigabites));
             }
-            if ((p5 == null)) {
-                throw new global::System.ArgumentNullException("p5");
+            if ((Memoria_RAM_gibabites == null)) {
+                throw new global::System.ArgumentNullException("Memoria_RAM_gibabites");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p5));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Memoria_RAM_gibabites));
             }
             if ((Sistema_Operativo == null)) {
                 throw new global::System.ArgumentNullException("Sistema_Operativo");
@@ -2610,8 +3036,8 @@ WHERE        (Sistema_Operativo LIKE '%' + @sistema_operativo + '%')";
                     System.DateTime data_de_aqusicao, 
                     int garantia_meses, 
                     string p1, 
-                    string p3, 
-                    string p5, 
+                    string Disco_Duro_gigabites, 
+                    string Memoria_RAM_gibabites, 
                     string Sistema_Operativo, 
                     int placas_de_rede, 
                     int Original_id_equipamento, 
@@ -2619,8 +3045,8 @@ WHERE        (Sistema_Operativo LIKE '%' + @sistema_operativo + '%')";
                     System.DateTime Original_data_de_aqusicao, 
                     int Original_garantia_meses, 
                     string p2, 
-                    string p4, 
-                    string p6, 
+                    string Original_Disco_Duro_gigabites, 
+                    string Original_Memoria_RAM_gibabites, 
                     string Original_Sistema_Operativo, 
                     int Original_placas_de_rede, 
                     int id_equipamento) {
@@ -2638,17 +3064,17 @@ WHERE        (Sistema_Operativo LIKE '%' + @sistema_operativo + '%')";
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p1));
             }
-            if ((p3 == null)) {
-                throw new global::System.ArgumentNullException("p3");
+            if ((Disco_Duro_gigabites == null)) {
+                throw new global::System.ArgumentNullException("Disco_Duro_gigabites");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p3));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Disco_Duro_gigabites));
             }
-            if ((p5 == null)) {
-                throw new global::System.ArgumentNullException("p5");
+            if ((Memoria_RAM_gibabites == null)) {
+                throw new global::System.ArgumentNullException("Memoria_RAM_gibabites");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p5));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Memoria_RAM_gibabites));
             }
             if ((Sistema_Operativo == null)) {
                 throw new global::System.ArgumentNullException("Sistema_Operativo");
@@ -2672,17 +3098,17 @@ WHERE        (Sistema_Operativo LIKE '%' + @sistema_operativo + '%')";
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(p2));
             }
-            if ((p4 == null)) {
-                throw new global::System.ArgumentNullException("p4");
+            if ((Original_Disco_Duro_gigabites == null)) {
+                throw new global::System.ArgumentNullException("Original_Disco_Duro_gigabites");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(p4));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Disco_Duro_gigabites));
             }
-            if ((p6 == null)) {
-                throw new global::System.ArgumentNullException("p6");
+            if ((Original_Memoria_RAM_gibabites == null)) {
+                throw new global::System.ArgumentNullException("Original_Memoria_RAM_gibabites");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(p6));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Memoria_RAM_gibabites));
             }
             if ((Original_Sistema_Operativo == null)) {
                 throw new global::System.ArgumentNullException("Original_Sistema_Operativo");
@@ -2717,8 +3143,8 @@ WHERE        (Sistema_Operativo LIKE '%' + @sistema_operativo + '%')";
                     System.DateTime data_de_aqusicao, 
                     int garantia_meses, 
                     string p1, 
-                    string p3, 
-                    string p5, 
+                    string Disco_Duro_gigabites, 
+                    string Memoria_RAM_gibabites, 
                     string Sistema_Operativo, 
                     int placas_de_rede, 
                     int Original_id_equipamento, 
@@ -2726,11 +3152,11 @@ WHERE        (Sistema_Operativo LIKE '%' + @sistema_operativo + '%')";
                     System.DateTime Original_data_de_aqusicao, 
                     int Original_garantia_meses, 
                     string p2, 
-                    string p4, 
-                    string p6, 
+                    string Original_Disco_Duro_gigabites, 
+                    string Original_Memoria_RAM_gibabites, 
                     string Original_Sistema_Operativo, 
                     int Original_placas_de_rede) {
-            return this.Update(nome, data_de_aqusicao, garantia_meses, p1, p3, p5, Sistema_Operativo, placas_de_rede, Original_id_equipamento, Original_nome, Original_data_de_aqusicao, Original_garantia_meses, p2, p4, p6, Original_Sistema_Operativo, Original_placas_de_rede, Original_id_equipamento);
+            return this.Update(nome, data_de_aqusicao, garantia_meses, p1, Disco_Duro_gigabites, Memoria_RAM_gibabites, Sistema_Operativo, placas_de_rede, Original_id_equipamento, Original_nome, Original_data_de_aqusicao, Original_garantia_meses, p2, Original_Disco_Duro_gigabites, Original_Memoria_RAM_gibabites, Original_Sistema_Operativo, Original_placas_de_rede, Original_id_equipamento);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3262,11 +3688,11 @@ SELECT id_placa, endereço_IP, endereco_broadcast FROM [Placa de rede] WHERE (id
             tableMapping.ColumnMappings.Add("nome", "nome");
             tableMapping.ColumnMappings.Add("data_de_aqusicao", "data_de_aqusicao");
             tableMapping.ColumnMappings.Add("garantia_meses", "garantia_meses");
-            tableMapping.ColumnMappings.Add("CPU(marca)", "CPU(marca)");
-            tableMapping.ColumnMappings.Add("Disco_Duro(gigabites)", "Disco_Duro(gigabites)");
-            tableMapping.ColumnMappings.Add("Memoria_RAM(gibabites)", "Memoria_RAM(gibabites)");
             tableMapping.ColumnMappings.Add("Sistema_Operativo", "Sistema_Operativo");
             tableMapping.ColumnMappings.Add("endereço_IP", "endereço_IP");
+            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
+            tableMapping.ColumnMappings.Add("Memoria_RAM_gibabites", "Memoria_RAM_gibabites");
+            tableMapping.ColumnMappings.Add("Disco_Duro_gigabites", "Disco_Duro_gigabites");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -3283,8 +3709,8 @@ SELECT id_placa, endereço_IP, endereco_broadcast FROM [Placa de rede] WHERE (id
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Equipamentos.nome, Equipamentos.data_de_aqusicao, Equipamentos.garantia_meses, Equipamentos.[CPU(marca)], Equipamentos.[Disco_Duro(gigabites)], 
-                         Equipamentos.[Memoria_RAM(gibabites)], Equipamentos.Sistema_Operativo, [Placa de rede].endereço_IP
+            this._commandCollection[0].CommandText = @"SELECT        Equipamentos.[CPU(marca)] AS Expr1, [Placa de rede].endereço_IP, Equipamentos.Sistema_Operativo, Equipamentos.Memoria_RAM_gibabites, 
+                         Equipamentos.Disco_Duro_gigabites, Equipamentos.garantia_meses, Equipamentos.data_de_aqusicao, Equipamentos.nome
 FROM            Equipamentos INNER JOIN
                          [Placa de rede] ON Equipamentos.placas_de_rede = [Placa de rede].id_placa
 WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')";
@@ -3452,6 +3878,7 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')";
             tableMapping.DataSetTable = "Equipamentos1";
             tableMapping.ColumnMappings.Add("Equipamento", "Equipamento");
             tableMapping.ColumnMappings.Add("Memoria_RAM_gibabites", "Memoria_RAM_gibabites");
+            tableMapping.ColumnMappings.Add("nome", "nome");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -3468,9 +3895,9 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        COUNT(*) AS Equipamento, Memoria_RAM_gibabites\r\nFROM            Equ" +
-                "ipamentos\r\nGROUP BY Memoria_RAM_gibabites\r\nHAVING        (Memoria_RAM_gibabites " +
-                "< \'4\')";
+            this._commandCollection[0].CommandText = "SELECT        COUNT(*) AS Equipamento, Memoria_RAM_gibabites, nome\r\nFROM         " +
+                "   Equipamentos\r\nGROUP BY Memoria_RAM_gibabites, nome\r\nHAVING        (Memoria_RA" +
+                "M_gibabites < \'4\')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3500,6 +3927,224 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')";
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Equipamentos2TableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public Equipamentos2TableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Equipamentos2";
+            tableMapping.ColumnMappings.Add("nome", "nome");
+            tableMapping.ColumnMappings.Add("garantia_meses", "garantia_meses");
+            tableMapping.ColumnMappings.Add("id_equipamento", "id_equipamento");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Equipamentos] WHERE (([nome] = @Original_nome) AND ([garantia_meses]" +
+                " = @Original_garantia_meses) AND ([id_equipamento] = @Original_id_equipamento))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_garantia_meses", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "garantia_meses", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_equipamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_equipamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Equipamentos] SET [nome] = @nome, [garantia_meses] = @garantia_meses WHERE (([nome] = @Original_nome) AND ([garantia_meses] = @Original_garantia_meses) AND ([id_equipamento] = @Original_id_equipamento));
+SELECT nome, garantia_meses, id_equipamento FROM Equipamentos WHERE (id_equipamento = @id_equipamento)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@garantia_meses", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "garantia_meses", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_garantia_meses", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "garantia_meses", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_equipamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_equipamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_equipamento", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_equipamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::lp17.Properties.Settings.Default.Database1ConnectionString1;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT nome, garantia_meses, id_equipamento FROM Equipamentos WHERE (garantia_mes" +
+                "es > 12)";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Database1DataSet.Equipamentos2DataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Database1DataSet.Equipamentos2DataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Database1DataSet.Equipamentos2DataTable dataTable = new Database1DataSet.Equipamentos2DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Database1DataSet.Equipamentos2DataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Database1DataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Equipamentos2");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3514,6 +4159,8 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')";
         private EquipamentosTableAdapter _equipamentosTableAdapter;
         
         private Placa_de_redeTableAdapter _placa_de_redeTableAdapter;
+        
+        private Equipamentos2TableAdapter _equipamentos2TableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -3560,6 +4207,20 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public Equipamentos2TableAdapter Equipamentos2TableAdapter {
+            get {
+                return this._equipamentos2TableAdapter;
+            }
+            set {
+                this._equipamentos2TableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -3585,6 +4246,10 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')";
                             && (this._placa_de_redeTableAdapter.Connection != null))) {
                     return this._placa_de_redeTableAdapter.Connection;
                 }
+                if (((this._equipamentos2TableAdapter != null) 
+                            && (this._equipamentos2TableAdapter.Connection != null))) {
+                    return this._equipamentos2TableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -3604,6 +4269,9 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')";
                 if ((this._placa_de_redeTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._equipamentos2TableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -3621,6 +4289,15 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._placa_de_redeTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._equipamentos2TableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Equipamentos2.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._equipamentos2TableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -3651,6 +4328,14 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._equipamentos2TableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Equipamentos2.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._equipamentos2TableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._equipamentosTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Equipamentos.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -3674,6 +4359,14 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._equipamentosTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._equipamentos2TableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Equipamentos2.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._equipamentos2TableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -3734,6 +4427,11 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._equipamentos2TableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._equipamentos2TableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -3782,6 +4480,15 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')";
                     if (this._placa_de_redeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._placa_de_redeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._placa_de_redeTableAdapter.Adapter);
+                    }
+                }
+                if ((this._equipamentos2TableAdapter != null)) {
+                    revertConnections.Add(this._equipamentos2TableAdapter, this._equipamentos2TableAdapter.Connection);
+                    this._equipamentos2TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._equipamentos2TableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._equipamentos2TableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._equipamentos2TableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._equipamentos2TableAdapter.Adapter);
                     }
                 }
                 // 
@@ -3849,6 +4556,10 @@ WHERE        ([Placa de rede].endereço_IP LIKE '%' + @endereço_IP + '%')";
                 if ((this._placa_de_redeTableAdapter != null)) {
                     this._placa_de_redeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._placa_de_redeTableAdapter]));
                     this._placa_de_redeTableAdapter.Transaction = null;
+                }
+                if ((this._equipamentos2TableAdapter != null)) {
+                    this._equipamentos2TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._equipamentos2TableAdapter]));
+                    this._equipamentos2TableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

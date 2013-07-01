@@ -15,5 +15,17 @@ namespace lp17
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listar_RAM novaform = new listar_RAM();
+            novaform.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listar_garantia novaform = new listar_garantia();
+            novaform.Show();
+        }
     }
 }

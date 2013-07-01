@@ -35,10 +35,10 @@
             System.Windows.Forms.Label data_de_aqusicaoLabel;
             System.Windows.Forms.Label garantia_mesesLabel;
             System.Windows.Forms.Label cPU_marca_Label;
-            System.Windows.Forms.Label disco_Duro_gigabites_Label;
-            System.Windows.Forms.Label memoria_RAM_gibabites_Label;
             System.Windows.Forms.Label sistema_OperativoLabel;
             System.Windows.Forms.Label placas_de_redeLabel;
+            System.Windows.Forms.Label disco_Duro_gigabitesLabel;
+            System.Windows.Forms.Label memoria_RAM_gibabitesLabel;
             this.database1DataSet = new lp17.Database1DataSet();
             this.equipamentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.equipamentosTableAdapter = new lp17.Database1DataSetTableAdapters.EquipamentosTableAdapter();
@@ -61,19 +61,19 @@
             this.data_de_aqusicaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.garantia_mesesTextBox = new System.Windows.Forms.TextBox();
             this.cPU_marca_TextBox = new System.Windows.Forms.TextBox();
-            this.disco_Duro_gigabites_TextBox = new System.Windows.Forms.TextBox();
-            this.memoria_RAM_gibabites_TextBox = new System.Windows.Forms.TextBox();
             this.sistema_OperativoTextBox = new System.Windows.Forms.TextBox();
             this.placas_de_redeTextBox = new System.Windows.Forms.TextBox();
+            this.disco_Duro_gigabitesTextBox = new System.Windows.Forms.TextBox();
+            this.memoria_RAM_gibabitesTextBox = new System.Windows.Forms.TextBox();
             id_equipamentoLabel = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
             data_de_aqusicaoLabel = new System.Windows.Forms.Label();
             garantia_mesesLabel = new System.Windows.Forms.Label();
             cPU_marca_Label = new System.Windows.Forms.Label();
-            disco_Duro_gigabites_Label = new System.Windows.Forms.Label();
-            memoria_RAM_gibabites_Label = new System.Windows.Forms.Label();
             sistema_OperativoLabel = new System.Windows.Forms.Label();
             placas_de_redeLabel = new System.Windows.Forms.Label();
+            disco_Duro_gigabitesLabel = new System.Windows.Forms.Label();
+            memoria_RAM_gibabitesLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipamentosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipamentosBindingNavigator)).BeginInit();
@@ -97,6 +97,7 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Equipamentos2TableAdapter = null;
             this.tableAdapterManager.EquipamentosTableAdapter = this.equipamentosTableAdapter;
             this.tableAdapterManager.Placa_de_redeTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = lp17.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -181,9 +182,8 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
-            this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.bindingNavigatorMoveNextItem_Click);
             // 
             // bindingNavigatorMoveLastItem
             // 
@@ -224,12 +224,12 @@
             this.equipamentosBindingNavigatorSaveItem.Name = "equipamentosBindingNavigatorSaveItem";
             this.equipamentosBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
             this.equipamentosBindingNavigatorSaveItem.Text = "Save Data";
-            this.equipamentosBindingNavigatorSaveItem.Click += new System.EventHandler(this.equipamentosBindingNavigatorSaveItem_Click);
+            this.equipamentosBindingNavigatorSaveItem.Click += new System.EventHandler(this.equipamentosBindingNavigatorSaveItem_Click_2);
             // 
             // id_equipamentoLabel
             // 
             id_equipamentoLabel.AutoSize = true;
-            id_equipamentoLabel.Location = new System.Drawing.Point(121, 86);
+            id_equipamentoLabel.Location = new System.Drawing.Point(66, 126);
             id_equipamentoLabel.Name = "id_equipamentoLabel";
             id_equipamentoLabel.Size = new System.Drawing.Size(82, 13);
             id_equipamentoLabel.TabIndex = 1;
@@ -238,7 +238,7 @@
             // id_equipamentoTextBox
             // 
             this.id_equipamentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipamentosBindingSource, "id_equipamento", true));
-            this.id_equipamentoTextBox.Location = new System.Drawing.Point(252, 83);
+            this.id_equipamentoTextBox.Location = new System.Drawing.Point(194, 123);
             this.id_equipamentoTextBox.Name = "id_equipamentoTextBox";
             this.id_equipamentoTextBox.Size = new System.Drawing.Size(200, 20);
             this.id_equipamentoTextBox.TabIndex = 2;
@@ -246,7 +246,7 @@
             // nomeLabel
             // 
             nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(121, 112);
+            nomeLabel.Location = new System.Drawing.Point(66, 152);
             nomeLabel.Name = "nomeLabel";
             nomeLabel.Size = new System.Drawing.Size(36, 13);
             nomeLabel.TabIndex = 3;
@@ -255,7 +255,7 @@
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipamentosBindingSource, "nome", true));
-            this.nomeTextBox.Location = new System.Drawing.Point(252, 109);
+            this.nomeTextBox.Location = new System.Drawing.Point(194, 149);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(200, 20);
             this.nomeTextBox.TabIndex = 4;
@@ -263,7 +263,7 @@
             // data_de_aqusicaoLabel
             // 
             data_de_aqusicaoLabel.AutoSize = true;
-            data_de_aqusicaoLabel.Location = new System.Drawing.Point(121, 139);
+            data_de_aqusicaoLabel.Location = new System.Drawing.Point(66, 179);
             data_de_aqusicaoLabel.Name = "data_de_aqusicaoLabel";
             data_de_aqusicaoLabel.Size = new System.Drawing.Size(92, 13);
             data_de_aqusicaoLabel.TabIndex = 5;
@@ -272,7 +272,7 @@
             // data_de_aqusicaoDateTimePicker
             // 
             this.data_de_aqusicaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.equipamentosBindingSource, "data_de_aqusicao", true));
-            this.data_de_aqusicaoDateTimePicker.Location = new System.Drawing.Point(252, 135);
+            this.data_de_aqusicaoDateTimePicker.Location = new System.Drawing.Point(194, 175);
             this.data_de_aqusicaoDateTimePicker.Name = "data_de_aqusicaoDateTimePicker";
             this.data_de_aqusicaoDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.data_de_aqusicaoDateTimePicker.TabIndex = 6;
@@ -280,7 +280,7 @@
             // garantia_mesesLabel
             // 
             garantia_mesesLabel.AutoSize = true;
-            garantia_mesesLabel.Location = new System.Drawing.Point(121, 164);
+            garantia_mesesLabel.Location = new System.Drawing.Point(66, 204);
             garantia_mesesLabel.Name = "garantia_mesesLabel";
             garantia_mesesLabel.Size = new System.Drawing.Size(81, 13);
             garantia_mesesLabel.TabIndex = 7;
@@ -289,7 +289,7 @@
             // garantia_mesesTextBox
             // 
             this.garantia_mesesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipamentosBindingSource, "garantia_meses", true));
-            this.garantia_mesesTextBox.Location = new System.Drawing.Point(252, 161);
+            this.garantia_mesesTextBox.Location = new System.Drawing.Point(194, 201);
             this.garantia_mesesTextBox.Name = "garantia_mesesTextBox";
             this.garantia_mesesTextBox.Size = new System.Drawing.Size(200, 20);
             this.garantia_mesesTextBox.TabIndex = 8;
@@ -297,7 +297,7 @@
             // cPU_marca_Label
             // 
             cPU_marca_Label.AutoSize = true;
-            cPU_marca_Label.Location = new System.Drawing.Point(121, 190);
+            cPU_marca_Label.Location = new System.Drawing.Point(66, 230);
             cPU_marca_Label.Name = "cPU_marca_Label";
             cPU_marca_Label.Size = new System.Drawing.Size(67, 13);
             cPU_marca_Label.TabIndex = 9;
@@ -306,84 +306,84 @@
             // cPU_marca_TextBox
             // 
             this.cPU_marca_TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipamentosBindingSource, "CPU(marca)", true));
-            this.cPU_marca_TextBox.Location = new System.Drawing.Point(252, 187);
+            this.cPU_marca_TextBox.Location = new System.Drawing.Point(194, 227);
             this.cPU_marca_TextBox.Name = "cPU_marca_TextBox";
             this.cPU_marca_TextBox.Size = new System.Drawing.Size(200, 20);
             this.cPU_marca_TextBox.TabIndex = 10;
             // 
-            // disco_Duro_gigabites_Label
-            // 
-            disco_Duro_gigabites_Label.AutoSize = true;
-            disco_Duro_gigabites_Label.Location = new System.Drawing.Point(121, 216);
-            disco_Duro_gigabites_Label.Name = "disco_Duro_gigabites_Label";
-            disco_Duro_gigabites_Label.Size = new System.Drawing.Size(111, 13);
-            disco_Duro_gigabites_Label.TabIndex = 11;
-            disco_Duro_gigabites_Label.Text = "Disco Duro(gigabites):";
-            // 
-            // disco_Duro_gigabites_TextBox
-            // 
-            this.disco_Duro_gigabites_TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipamentosBindingSource, "Disco_Duro(gigabites)", true));
-            this.disco_Duro_gigabites_TextBox.Location = new System.Drawing.Point(252, 213);
-            this.disco_Duro_gigabites_TextBox.Name = "disco_Duro_gigabites_TextBox";
-            this.disco_Duro_gigabites_TextBox.Size = new System.Drawing.Size(200, 20);
-            this.disco_Duro_gigabites_TextBox.TabIndex = 12;
-            // 
-            // memoria_RAM_gibabites_Label
-            // 
-            memoria_RAM_gibabites_Label.AutoSize = true;
-            memoria_RAM_gibabites_Label.Location = new System.Drawing.Point(121, 242);
-            memoria_RAM_gibabites_Label.Name = "memoria_RAM_gibabites_Label";
-            memoria_RAM_gibabites_Label.Size = new System.Drawing.Size(125, 13);
-            memoria_RAM_gibabites_Label.TabIndex = 13;
-            memoria_RAM_gibabites_Label.Text = "Memoria RAM(gibabites):";
-            // 
-            // memoria_RAM_gibabites_TextBox
-            // 
-            this.memoria_RAM_gibabites_TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipamentosBindingSource, "Memoria_RAM(gibabites)", true));
-            this.memoria_RAM_gibabites_TextBox.Location = new System.Drawing.Point(252, 239);
-            this.memoria_RAM_gibabites_TextBox.Name = "memoria_RAM_gibabites_TextBox";
-            this.memoria_RAM_gibabites_TextBox.Size = new System.Drawing.Size(200, 20);
-            this.memoria_RAM_gibabites_TextBox.TabIndex = 14;
-            // 
             // sistema_OperativoLabel
             // 
             sistema_OperativoLabel.AutoSize = true;
-            sistema_OperativoLabel.Location = new System.Drawing.Point(121, 268);
+            sistema_OperativoLabel.Location = new System.Drawing.Point(66, 256);
             sistema_OperativoLabel.Name = "sistema_OperativoLabel";
             sistema_OperativoLabel.Size = new System.Drawing.Size(96, 13);
-            sistema_OperativoLabel.TabIndex = 15;
+            sistema_OperativoLabel.TabIndex = 11;
             sistema_OperativoLabel.Text = "Sistema Operativo:";
             // 
             // sistema_OperativoTextBox
             // 
             this.sistema_OperativoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipamentosBindingSource, "Sistema_Operativo", true));
-            this.sistema_OperativoTextBox.Location = new System.Drawing.Point(252, 265);
+            this.sistema_OperativoTextBox.Location = new System.Drawing.Point(194, 253);
             this.sistema_OperativoTextBox.Name = "sistema_OperativoTextBox";
             this.sistema_OperativoTextBox.Size = new System.Drawing.Size(200, 20);
-            this.sistema_OperativoTextBox.TabIndex = 16;
+            this.sistema_OperativoTextBox.TabIndex = 12;
             // 
             // placas_de_redeLabel
             // 
             placas_de_redeLabel.AutoSize = true;
-            placas_de_redeLabel.Location = new System.Drawing.Point(121, 294);
+            placas_de_redeLabel.Location = new System.Drawing.Point(66, 282);
             placas_de_redeLabel.Name = "placas_de_redeLabel";
             placas_de_redeLabel.Size = new System.Drawing.Size(80, 13);
-            placas_de_redeLabel.TabIndex = 17;
+            placas_de_redeLabel.TabIndex = 13;
             placas_de_redeLabel.Text = "placas de rede:";
             // 
             // placas_de_redeTextBox
             // 
             this.placas_de_redeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipamentosBindingSource, "placas_de_rede", true));
-            this.placas_de_redeTextBox.Location = new System.Drawing.Point(252, 291);
+            this.placas_de_redeTextBox.Location = new System.Drawing.Point(194, 279);
             this.placas_de_redeTextBox.Name = "placas_de_redeTextBox";
             this.placas_de_redeTextBox.Size = new System.Drawing.Size(200, 20);
-            this.placas_de_redeTextBox.TabIndex = 18;
+            this.placas_de_redeTextBox.TabIndex = 14;
+            // 
+            // disco_Duro_gigabitesLabel
+            // 
+            disco_Duro_gigabitesLabel.AutoSize = true;
+            disco_Duro_gigabitesLabel.Location = new System.Drawing.Point(66, 308);
+            disco_Duro_gigabitesLabel.Name = "disco_Duro_gigabitesLabel";
+            disco_Duro_gigabitesLabel.Size = new System.Drawing.Size(108, 13);
+            disco_Duro_gigabitesLabel.TabIndex = 15;
+            disco_Duro_gigabitesLabel.Text = "Disco Duro gigabites:";
+            // 
+            // disco_Duro_gigabitesTextBox
+            // 
+            this.disco_Duro_gigabitesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipamentosBindingSource, "Disco_Duro_gigabites", true));
+            this.disco_Duro_gigabitesTextBox.Location = new System.Drawing.Point(194, 305);
+            this.disco_Duro_gigabitesTextBox.Name = "disco_Duro_gigabitesTextBox";
+            this.disco_Duro_gigabitesTextBox.Size = new System.Drawing.Size(200, 20);
+            this.disco_Duro_gigabitesTextBox.TabIndex = 16;
+            // 
+            // memoria_RAM_gibabitesLabel
+            // 
+            memoria_RAM_gibabitesLabel.AutoSize = true;
+            memoria_RAM_gibabitesLabel.Location = new System.Drawing.Point(66, 334);
+            memoria_RAM_gibabitesLabel.Name = "memoria_RAM_gibabitesLabel";
+            memoria_RAM_gibabitesLabel.Size = new System.Drawing.Size(122, 13);
+            memoria_RAM_gibabitesLabel.TabIndex = 17;
+            memoria_RAM_gibabitesLabel.Text = "Memoria RAM gibabites:";
+            // 
+            // memoria_RAM_gibabitesTextBox
+            // 
+            this.memoria_RAM_gibabitesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipamentosBindingSource, "Memoria_RAM_gibabites", true));
+            this.memoria_RAM_gibabitesTextBox.Location = new System.Drawing.Point(194, 331);
+            this.memoria_RAM_gibabitesTextBox.Name = "memoria_RAM_gibabitesTextBox";
+            this.memoria_RAM_gibabitesTextBox.Size = new System.Drawing.Size(200, 20);
+            this.memoria_RAM_gibabitesTextBox.TabIndex = 18;
             // 
             // inserir_equi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 331);
+            this.ClientSize = new System.Drawing.Size(472, 371);
             this.Controls.Add(id_equipamentoLabel);
             this.Controls.Add(this.id_equipamentoTextBox);
             this.Controls.Add(nomeLabel);
@@ -394,14 +394,14 @@
             this.Controls.Add(this.garantia_mesesTextBox);
             this.Controls.Add(cPU_marca_Label);
             this.Controls.Add(this.cPU_marca_TextBox);
-            this.Controls.Add(disco_Duro_gigabites_Label);
-            this.Controls.Add(this.disco_Duro_gigabites_TextBox);
-            this.Controls.Add(memoria_RAM_gibabites_Label);
-            this.Controls.Add(this.memoria_RAM_gibabites_TextBox);
             this.Controls.Add(sistema_OperativoLabel);
             this.Controls.Add(this.sistema_OperativoTextBox);
             this.Controls.Add(placas_de_redeLabel);
             this.Controls.Add(this.placas_de_redeTextBox);
+            this.Controls.Add(disco_Duro_gigabitesLabel);
+            this.Controls.Add(this.disco_Duro_gigabitesTextBox);
+            this.Controls.Add(memoria_RAM_gibabitesLabel);
+            this.Controls.Add(this.memoria_RAM_gibabitesTextBox);
             this.Controls.Add(this.equipamentosBindingNavigator);
             this.Name = "inserir_equi";
             this.Text = "inserir_equi";
@@ -440,9 +440,11 @@
         private System.Windows.Forms.DateTimePicker data_de_aqusicaoDateTimePicker;
         private System.Windows.Forms.TextBox garantia_mesesTextBox;
         private System.Windows.Forms.TextBox cPU_marca_TextBox;
-        private System.Windows.Forms.TextBox disco_Duro_gigabites_TextBox;
-        private System.Windows.Forms.TextBox memoria_RAM_gibabites_TextBox;
         private System.Windows.Forms.TextBox sistema_OperativoTextBox;
         private System.Windows.Forms.TextBox placas_de_redeTextBox;
+        private System.Windows.Forms.TextBox disco_Duro_gigabitesTextBox;
+        private System.Windows.Forms.TextBox memoria_RAM_gibabitesTextBox;
+
+
     }
 }
